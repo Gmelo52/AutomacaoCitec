@@ -1,23 +1,77 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import firebase from "../config/firebase";
 import {
   BoxCont,
-  BtnPower,
-  IconPower,
+  BtnHeader,
+  BtnHeaderOff,
   ImgIcon,
   ScrollBtn,
   TextTitle,
+  TextTitleOff,
   ViewBtn,
   ViewRow,
   ViewText,
-  BtnOff,
+  ViewTitleBox,
 } from "../pages/styles";
 import CustomBtn from "./customBtn";
+
 export default function Luzes() {
+  const [textAll, setTextAll] = useState("");
+  const [status, setstatus] = useState();
+
+  useEffect(() => {
+    const db = firebase.database();
+    let interval = setInterval(async () => {
+      let resultado = await db.ref("Luzes").child("Todas as luzes").get();
+      setstatus(resultado.val())
+    }, 500);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  function LigarTudo() {
+    const db = firebase.database();
+    db.ref("Luzes").child("Todas as luzes").set(true);
+    db.ref("Luzes").child("Luz 1").set(true);
+    db.ref("Luzes").child("Luz 2").set(true);
+    setstatus(true);
+    console.log(status);
+  }
+  function DesligarTudo() {
+    const db = firebase.database();
+    db.ref("Luzes").child("Todas as luzes").set(false);
+    db.ref("Luzes").child("Luz 1").set(false);
+    db.ref("Luzes").child("Luz 2").set(false);
+    setstatus(false);
+    console.log(status);
+  }
+
   return (
     <BoxCont>
       <ViewText>
-        <TextTitle>Luzes</TextTitle>
-        <ImgIcon source={require("../assets/Luz.png")} />
+        <ViewTitleBox>
+          <TextTitle>Luzes</TextTitle>
+          <ImgIcon source={require("../assets/Luz.png")} />
+        </ViewTitleBox>
+
+        {status ? (
+          <BtnHeaderOff
+            onPress={() => {
+              DesligarTudo();
+            }}
+          >
+            <TextTitleOff style={{ fontSize: 20 }}>Desligar Tudo</TextTitleOff>
+          </BtnHeaderOff>
+        ) : (
+          <BtnHeader
+            onPress={() => {
+              LigarTudo();
+            }}
+          >
+            <TextTitle style={{ fontSize: 20 }}>Ligar Tudo</TextTitle>
+          </BtnHeader>
+        )}
       </ViewText>
       <ViewBtn>
         <ScrollBtn showsVerticalScrollIndicator={false}>

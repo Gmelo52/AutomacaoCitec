@@ -1,30 +1,16 @@
 import React, { useState } from "react";
+import Ar from "../components/ar";
+import Clock from "../components/clock";
+import Luzes from "../components/luzes";
+import Portas from "../components/portas";
 import {
-  ViewBox,
   BtnHeader,
   Container,
   ContImage,
-  ContScroll,
-  Scroll,
-  Header,
-  TextTitle,
-  ImgIcon,
-  ImgLogo,
-  BoxCont,
-  ViewText,
-  ViewBtn,
-  BtnPower,
-  ViewRow,
-  IconPower,
-  ScrollBtn,
-  BtnOff,
-  ContHeaderTitle,
+  ContScroll, Header, ImgIcon,
+  ImgLogo, Scroll, TextTitle, ViewBox
 } from "./styles";
 
-import Luzes from "../components/luzes";
-import Portas from "../components/portas";
-import Ar from "../components/ar";
-import Clock from "../components/clock";
 
 export default function Home() {
   const [component, setComponent] = useState(<Luzes />);
@@ -34,7 +20,7 @@ export default function Home() {
         <ContImage>
           <ImgLogo source={require("../assets/logoCitec.png")} />
         </ContImage>
-        <Clock />
+        <Clock/>
         <ContScroll>
           <Scroll horizontal showsHorizontalScrollIndicator={false}>
             <BtnHeader

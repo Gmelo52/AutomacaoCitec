@@ -1,7 +1,4 @@
-import { Dimensions } from "react-native";
 import styled from "styled-components/native";
-
-const altura = Dimensions.get("window").height;
 
 export const Container = styled.View`
   width: 100%;
@@ -15,29 +12,29 @@ export const Header = styled.View`
   align-items: center;
   background-color: ${(props) => props.theme.primary};
 `;
-
 export const ContImage = styled.View`
   width: 100%;
   height: auto;
-  flex: .55;
-/*   background-color: ${(props) => props.theme.primary}; */
+  flex: 0.55;
+  background-color: ${(props) => props.theme.primary};
   justify-content: center;
   align-items: center;
 `;
 export const ImgLogo = styled.Image`
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   resize-mode: contain;
   margin: 0 5px;
 `;
 export const TextClock = styled.Text`
   color: ${(props) => props.theme.secondary};
   font-weight: bold;
-  font-size: 25px;
+  font-size: 20px;
 `;
 export const ContScroll = styled.View`
   width: 100%;
   height: 20%;
+  margin: 10px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 30px;
   justify-content: center;
@@ -58,8 +55,24 @@ export const BtnHeader = styled.TouchableOpacity`
   flex-direction: row;
   padding: 0 30px;
 `;
+export const BtnHeaderOff = styled.TouchableOpacity`
+  width: auto;
+  background-color: ${(props) => props.theme.primary};
+  border-radius: 30px;
+  margin: 0 5px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 30px;
+`;
 export const TextTitle = styled.Text`
   color: ${(props) => props.theme.primary};
+  font-weight: bold;
+  font-size: 30px;
+  margin: 0 5px;
+`;
+export const TextTitleOff = styled.Text`
+  color: ${(props) => props.theme.light};
   font-weight: bold;
   font-size: 30px;
   margin: 0 5px;
@@ -85,8 +98,12 @@ export const BoxCont = styled.View`
   margin-top: 20px;
 `;
 export const ViewText = styled.View`
+  justify-content: space-between;
   flex-direction: row;
   margin-bottom: 20px;
+`;
+export const ViewTitleBox = styled.View`
+  flex-direction: row;
 `;
 
 export const ViewBtn = styled.View`

@@ -9,6 +9,7 @@ import {
   ViewBtn,
   ViewRow,
   ViewText,
+  ViewTitleBox,
 } from "../pages/styles";
 import CustomBtn from "./customBtn";
 import firebase from "../config/firebase";
@@ -20,8 +21,10 @@ export default function Portas() {
   return (
     <BoxCont>
       <ViewText>
+        <ViewTitleBox>
         <TextTitle>Portas</TextTitle>
         <ImgIcon source={require("../assets/portas.png")} />
+        </ViewTitleBox>
       </ViewText>
       <ViewBtn>
         <ScrollBtn showsVerticalScrollIndicator={false}>

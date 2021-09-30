@@ -9,47 +9,21 @@ import {
   ViewBtn,
   ViewRow,
   ViewText,
+  ViewTitleBox,
 } from "../pages/styles";
 
 export default function Ar() {
   return (
     <BoxCont>
       <ViewText>
+        <ViewTitleBox>
         <TextTitle>Ar-condicionados</TextTitle>
         <ImgIcon source={require("../assets/Luz.png")} />
+        </ViewTitleBox>
       </ViewText>
       <ViewBtn>
         <ScrollBtn showsHorizontalScrollIndicator={false}>
-          <ViewRow>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-          </ViewRow>
-          <ViewRow>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-          </ViewRow>
-          <ViewRow>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-            <BtnPower>
-              <IconPower source={require("../assets/power.png")} />
-              <TextTitle>Luz 1</TextTitle>
-            </BtnPower>
-          </ViewRow>
+
         </ScrollBtn>
       </ViewBtn>
     </BoxCont>

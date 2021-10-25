@@ -8,19 +8,25 @@ import {
   Container,
   ContImage,
   ContScroll, Header, ImgIcon,
-  ImgLogo, Scroll, TextTitle, ViewBox
+  ImgLogo, Scroll, TextTemp, TextTitle, ViewBox, ViewRowHeader, ViewTemp
 } from "./styles";
-
 
 export default function Home() {
   const [component, setComponent] = useState(<Luzes />);
   return (
     <Container>
       <Header>
-        <ContImage>
-          <ImgLogo source={require("../assets/logoCitec.png")} />
-        </ContImage>
-        <Clock/>
+        <ViewRowHeader>
+          <ContImage>
+            <ImgLogo source={require("../assets/logoCitec.png")} />
+          </ContImage>
+          <ViewTemp>
+            <TextTemp>
+              25°
+            </TextTemp>
+            <Clock />
+          </ViewTemp>
+        </ViewRowHeader>
         <ContScroll>
           <Scroll horizontal showsHorizontalScrollIndicator={false}>
             <BtnHeader

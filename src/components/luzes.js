@@ -16,7 +16,6 @@ import {
 import CustomBtn from "./customBtn";
 
 export default function Luzes() {
-  const [textAll, setTextAll] = useState("");
   const [status, setstatus] = useState();
 
   useEffect(() => {
@@ -35,16 +34,16 @@ export default function Luzes() {
     db.ref("Luzes").child("Todas as luzes").set(true);
     db.ref("Luzes").child("Luz 1").set(true);
     db.ref("Luzes").child("Luz 2").set(true);
+    db.ref("Luzes").child("Luz 3").set(true);
     setstatus(true);
-    console.log(status);
   }
   function DesligarTudo() {
     const db = firebase.database();
     db.ref("Luzes").child("Todas as luzes").set(false);
     db.ref("Luzes").child("Luz 1").set(false);
     db.ref("Luzes").child("Luz 2").set(false);
+    db.ref("Luzes").child("Luz 3").set(false);
     setstatus(false);
-    console.log(status);
   }
 
   return (
@@ -86,6 +85,14 @@ export default function Luzes() {
               nameIconOn="power"
               nameIconOff="power"
               title="Luz 2"
+              dispositivo="Luzes"
+            />
+          </ViewRow>
+          <ViewRow>
+          <CustomBtn
+              nameIconOn="power"
+              nameIconOff="power"
+              title="Luz 3"
               dispositivo="Luzes"
             />
           </ViewRow>

@@ -12,6 +12,26 @@ export const Header = styled.View`
   align-items: center;
   background-color: ${(props) => props.theme.primary};
 `;
+
+export const ViewRowHeader = styled.View`
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height: 45%;
+  width: 100%;
+`;
+
+export const ViewTemp = styled.View`
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+export const TextTemp = styled.Text`
+  font-size: 50;
+  font-weight: bold;
+  color: ${(props) => props.theme.secondary};
+`;
+
 export const ContImage = styled.View`
   width: 100%;
   height: auto;
@@ -21,8 +41,8 @@ export const ContImage = styled.View`
   align-items: center;
 `;
 export const ImgLogo = styled.Image`
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   resize-mode: contain;
   margin: 0 5px;
 `;
@@ -45,6 +65,7 @@ export const Scroll = styled.ScrollView`
   width: 100%;
   border-radius: 30px;
 `;
+
 export const BtnHeader = styled.TouchableOpacity`
   width: auto;
   background-color: ${(props) => props.theme.secondary};
@@ -55,6 +76,7 @@ export const BtnHeader = styled.TouchableOpacity`
   flex-direction: row;
   padding: 0 30px;
 `;
+
 export const BtnHeaderOff = styled.TouchableOpacity`
   width: auto;
   background-color: ${(props) => props.theme.primary};
@@ -117,7 +139,7 @@ export const ScrollBtn = styled.ScrollView`
 `;
 export const ViewRow = styled.View`
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 10px;
 `;
 export const BtnOff = styled.TouchableOpacity`

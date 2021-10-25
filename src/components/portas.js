@@ -36,30 +36,8 @@ export default function Portas() {
               status={status}
               dispositivo='Portas'
             />
-            <CustomBtn
-              nameIconOn="door-open"
-              nameIconOff="door-closed"
-              title="Porta 2"
-              status={status}
-              dispositivo='Portas'
-            />
           </ViewRow>
-          <ViewRow>
-            <CustomBtn
-              nameIconOn="door-open"
-              nameIconOff="door-closed"
-              title="Porta 3"
-              status={status}
-              dispositivo='Portas'
-            />
-            <CustomBtn
-              nameIconOn="door-open"
-              nameIconOff="door-closed"
-              title="Porta 4"
-              status={status}
-              dispositivo='Portas'
-            />
-          </ViewRow>
+          
         </ScrollBtn>
       </ViewBtn>
     </BoxCont>
